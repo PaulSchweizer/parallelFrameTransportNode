@@ -1,0 +1,21 @@
+global proc AEparallelFrameTransportTemplate( string $nodeName )
+{
+    editorTemplate -beginScrollLayout;
+
+        editorTemplate -beginLayout "Parallel Frame Transport" -collapse 0;
+
+            editorTemplate -addControl "restLength";
+            editorTemplate -addControl "params";
+            editorTemplate -addControl "absoluteParam";
+            editorTemplate -addControl "startMatrix";
+            AEaddRampControl( $nodeName + "twist");
+            AEaddRampControl( $nodeName + "scaleRamp");
+            editorTemplate -addControl "outTranslate";
+            editorTemplate -addControl "outRotate";
+            editorTemplate -addControl "outScale";
+
+        editorTemplate -endLayout;
+
+    editorTemplate -addExtraControls;
+    editorTemplate -endScrollLayout;
+}
